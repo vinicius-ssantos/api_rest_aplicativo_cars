@@ -1,4 +1,4 @@
-package com.viniciussantos.SpringRestAPI.domain.entity
+package com.viniciussantos.SpringRestAPI.domain
 
 import java.time.LocalDate
 import java.time.LocalDateTime

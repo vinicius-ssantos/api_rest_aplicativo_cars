@@ -1,9 +1,9 @@
-package com.viniciussantos.SpringRestAPI.interfaces
+package com.viniciussantos.SpringRestAPI.interfaces.incoming
 
 
-import com.viniciussantos.SpringRestAPI.domain.entity.TravelRequestStatus
-import com.viniciussantos.SpringRestAPI.domain.service.TravelService
-import com.viniciussantos.SpringRestAPI.interfaces.mapping.TravelRequestMapper
+import TravelRequestMapper
+import com.viniciussantos.SpringRestAPI.domain.TravelRequestStatus
+import com.viniciussantos.SpringRestAPI.domain.TravelService
 import org.springframework.hateoas.EntityModel
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service

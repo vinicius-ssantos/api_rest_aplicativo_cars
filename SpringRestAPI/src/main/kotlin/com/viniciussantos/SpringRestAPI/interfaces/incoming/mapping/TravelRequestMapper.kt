@@ -1,8 +1,8 @@
-import com.viniciussantos.SpringRestAPI.domain.entity.TravelRequest
-import com.viniciussantos.SpringRestAPI.domain.repository.PassengerRepository
-import com.viniciussantos.SpringRestAPI.interfaces.PassengerAPI
-import com.viniciussantos.SpringRestAPI.interfaces.TravelRequestInput
-import com.viniciussantos.SpringRestAPI.interfaces.TravelRequestOutput
+import com.viniciussantos.SpringRestAPI.domain.TravelRequest
+import com.viniciussantos.SpringRestAPI.domain.PassengerRepository
+import com.viniciussantos.SpringRestAPI.interfaces.incoming.PassengerAPI
+import com.viniciussantos.SpringRestAPI.interfaces.incoming.TravelRequestInput
+import com.viniciussantos.SpringRestAPI.interfaces.incoming.TravelRequestOutput
 import org.springframework.hateoas.EntityModel
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder
 import org.springframework.http.HttpStatus
@@ -22,7 +22,10 @@ class TravelRequestMapper(val passengersRepository: PassengerRepository) {
                 .orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
 
         // Retorna um novo TravelRequest com os dados do input e o passageiro encontrado
-        return TravelRequest(passenger = passenger, origin = input.origin, destination = input.destination)
+        return TravelRequest(
+            passenger = passenger,
+            origin = input.origin,
+            destination = input.destination)
     }
 
     // Esta função mapeia um TravelRequest para um TravelRequestOutput
@@ -38,7 +41,7 @@ class TravelRequestMapper(val passengersRepository: PassengerRepository) {
     }
 
     // Esta função constrói um EntityModel de TravelRequestOutput com um link para o passageiro
-    fun buildOutputModel(travelRequest: TravelRequest, output: TravelRequestOutput) :EntityModel<TravelRequestOutput>{
+    fun buildOutputModel(travelRequest: TravelRequest, output: TravelRequestOutput): EntityModel<TravelRequestOutput> {
         // Cria um link para o passageiro
         val passengerLink = WebMvcLinkBuilder
             .linkTo(PassengerAPI::class.java)

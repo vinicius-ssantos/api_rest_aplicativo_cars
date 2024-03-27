@@ -1,7 +1,7 @@
-package com.viniciussantos.SpringRestAPI.interfaces
+package com.viniciussantos.SpringRestAPI.interfaces.incoming
 
-import com.viniciussantos.SpringRestAPI.domain.entity.Passenger
-import com.viniciussantos.SpringRestAPI.domain.repository.PassengerRepository
+import com.viniciussantos.SpringRestAPI.domain.Passenger
+import com.viniciussantos.SpringRestAPI.domain.PassengerRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service

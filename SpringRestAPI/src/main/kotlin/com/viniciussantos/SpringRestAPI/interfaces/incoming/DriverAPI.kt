@@ -1,7 +1,7 @@
-package com.viniciussantos.SpringRestAPI.interfaces
+package com.viniciussantos.SpringRestAPI.interfaces.incoming
 
-import com.viniciussantos.SpringRestAPI.domain.entity.Driver
-import com.viniciussantos.SpringRestAPI.domain.repository.DriverRepository
+import com.viniciussantos.SpringRestAPI.domain.Driver
+import com.viniciussantos.SpringRestAPI.domain.DriverRepository
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.http.MediaType

@@ -1,8 +1,8 @@
-package com.viniciussantos.SpringRestAPI.domain.repository
+package com.viniciussantos.SpringRestAPI.domain
 
-import com.viniciussantos.SpringRestAPI.domain.entity.Driver
-import com.viniciussantos.SpringRestAPI.domain.entity.Passenger
-import com.viniciussantos.SpringRestAPI.domain.entity.TravelRequest
+import com.viniciussantos.SpringRestAPI.domain.Driver
+import com.viniciussantos.SpringRestAPI.domain.Passenger
+import com.viniciussantos.SpringRestAPI.domain.TravelRequest
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface DriverRepository : JpaRepository<Driver, Long>

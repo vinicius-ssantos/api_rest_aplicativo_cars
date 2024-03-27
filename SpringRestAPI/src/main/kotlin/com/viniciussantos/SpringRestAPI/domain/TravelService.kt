@@ -1,7 +1,7 @@
-package com.viniciussantos.SpringRestAPI.domain.service
+package com.viniciussantos.SpringRestAPI.domain
 
-import com.viniciussantos.SpringRestAPI.domain.entity.TravelRequest
-import com.viniciussantos.SpringRestAPI.domain.repository.TravelRequestRepository
+import com.viniciussantos.SpringRestAPI.domain.TravelRequest
+import com.viniciussantos.SpringRestAPI.domain.TravelRequestRepository
 import org.springframework.stereotype.Component
 
 

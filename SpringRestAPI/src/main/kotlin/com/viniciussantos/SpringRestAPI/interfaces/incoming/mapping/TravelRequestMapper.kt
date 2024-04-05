@@ -25,7 +25,8 @@ class TravelRequestMapper(val passengersRepository: PassengerRepository) {
         return TravelRequest(
             passenger = passenger,
             origin = input.origin,
-            destination = input.destination)
+            destination = input.destination
+        )
     }
 
     // Esta função mapeia um TravelRequest para um TravelRequestOutput
@@ -52,6 +53,11 @@ class TravelRequestMapper(val passengersRepository: PassengerRepository) {
         // Retorna um EntityModel com o output e o link para o passageiro
         return EntityModel.of(output, passengerLink)
     }
+
+    fun buildOutputModel(requests: List<TravelRequest>) =
+        requests.map {
+            buildOutputModel(it, map(it))
+        }
 }
 //```
 //

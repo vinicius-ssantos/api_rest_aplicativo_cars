@@ -26,6 +26,7 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.hateoas:spring-hateoas")
+	implementation("com.jayway.jsonpath:json-path")
 }
 
 tasks.withType<Test> {

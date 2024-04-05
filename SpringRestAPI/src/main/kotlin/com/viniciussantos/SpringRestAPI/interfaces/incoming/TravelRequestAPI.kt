@@ -7,10 +7,13 @@ import com.viniciussantos.SpringRestAPI.domain.TravelService
 import org.springframework.hateoas.EntityModel
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import java.net.Inet4Address
 import java.time.LocalDateTime
 
 
@@ -23,6 +26,11 @@ class TravelRequestAPI(val travelService: TravelService, val mapper: TravelReque
         val travelRequest = travelService.saveTravelRequest(mapper.map(travelRequestInput))
         val output = mapper.map(travelRequest)
         return mapper.buildOutputModel(travelRequest, output)
+    }
+    @GetMapping("/nearby")
+    fun listNearbyRequests(@RequestParam currentAddress: String):List<EntityModel<TravelRequestOutput>>{
+        val requests = travelService.listNearByTravelRequests(currentAddress)
+        return emptyList()
     }
 }
 

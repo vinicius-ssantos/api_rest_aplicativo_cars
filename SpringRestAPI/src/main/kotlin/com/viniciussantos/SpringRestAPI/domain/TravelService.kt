@@ -15,7 +15,7 @@ class TravelService(
     val MAX_TRAVEL_TIME: Int = 600
     fun saveTravelRequest(travelRequest: TravelRequest) = travelRequestRepository.save(travelRequest)
 
-    fun listNearByTravelRequests(currentAddress: String): List<TravelRequest> {
+    fun listNearbyTravelRequests(currentAddress: String): List<TravelRequest> {
         val requests = travelRequestRepository.findByStatus(TravelRequestStatus.CREATED)
         return requests.filter { tr ->
             gMapsService.getDistanceBetweenAddresses(

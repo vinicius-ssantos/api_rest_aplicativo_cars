@@ -1,3 +1,5 @@
+package  com.viniciussantos.SpringRestAPI.interfaces.incoming.mapping
+
 import com.viniciussantos.SpringRestAPI.domain.TravelRequest
 import com.viniciussantos.SpringRestAPI.domain.PassengerRepository
 import com.viniciussantos.SpringRestAPI.interfaces.incoming.PassengerAPI
